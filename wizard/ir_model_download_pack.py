@@ -81,6 +81,7 @@ class ModelDownloadPack(models.TransientModel):
 
         date = date.strftime('%Y-%m-%d')
         if len(date) == 10:
+            
             date += ' 00:00:00.000'
         try:
             res = datetime.datetime.strptime(date, '%Y-%m-%d %H:%M:%S.%f').strftime(format)
@@ -179,8 +180,8 @@ class ModelDownloadPack(models.TransientModel):
             counter = 0
             for rec in self.pack_find_candidates():
                 # Process the structure
-                rec_folder = self.pack_render_folder_structure(rec, file_path)
-                # rec_folder = file_path
+                # rec_folder = self.pack_render_folder_structure(rec, file_path)
+                rec_folder = file_path
 
                 _logger.info("This folder is %s" % rec_folder)
 

@@ -247,7 +247,7 @@ class ModelDownloadPack(models.TransientModel):
                     _logger.info("ZIP FILE NAME: %s" % zip_file)
 
                     zip_file_path = os.path.join(self.pack_get_file_path(), zip_file)
-                    zipf = zipfile.ZipFile(zip_file_path, 'w')
+                    zipf = zipfile.ZipFile(zip_file_path, 'w',compression=zipfile.ZIP_DEFLATED)
                     _logger.info("zip_file_path: %s" % zip_file_path)
 
                     #aqui está o problema - qual a pasta onde deve de começar o zip?
